@@ -7,10 +7,34 @@
 * Для успешного прохождения тестов не меняйте названия переменных!
 */
 
-let dice1 // your code
-let dice2 // your code
-let isWinningDouble // your code
-
+let dice1 =0// your code
+let dice2=0 // your code
+let count =2;
+let min = 1;
+let max = 6;
+let isWinningDouble =false;// your code
+for(let i=0; i<count; i++)
+{
+  if(i===0)
+  {
+    dice1 = Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  else
+  {
+    dice2 = Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+}
+console.log('Первый бросок:' + dice1);
+console.log('Второй бросок:' + dice2);
+if(dice1>3 && dice1===dice2)
+{
+  isWinningDouble=true;
+}
+if (isWinningDouble) {
+  console.log('Выигрышный дубль!')
+} else {
+  console.log('Не выигрышный дубль.')
+}
 /*
 console.log('Первый бросок: ' + dice1)
 console.log('Второй бросок: ' + dice2)
