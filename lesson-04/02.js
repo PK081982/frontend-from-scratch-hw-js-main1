@@ -14,5 +14,26 @@
 
 Подсказка: можно использовать функцию `includesElement`, которую мы написали ранее. Переписывать её не нужно, она доступна по всему проекту за счёт hoisting.
 */
+let ar = [1,1,2,1,3,4,1,4,1];//7
+let x=0;
+function findUniqueElements(ar)
+{
+    for(let b=0; b< ar.length-1; ++b)
+    {
+        for(let c=b+1; c< ar.length; ++c)
+        {
+            if(ar[c]===ar[b])
+            {
+                ar.splice(c, 1);
+            }   
+        }
+            
+    }
+}
 
-function findUniqueElements() {}
+findUniqueElements(ar);
+
+/*for(let b=0; b< ar.length; ++b)
+{
+    console.log(ar[b]);
+}*/
