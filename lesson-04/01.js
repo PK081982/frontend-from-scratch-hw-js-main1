@@ -15,9 +15,9 @@ includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 let ar = [1,3,5,7,9];
 function includesElement(ar, a) 
 {
-    for(let c of ar)
+    for(let c=0;c<ar.length; c++)
     {
-        if(c===a)
+        if(ar[c]===a)
         {
             return true;
         }
@@ -25,5 +25,5 @@ function includesElement(ar, a)
     }
     return false;
 }
-let c = includesElement(ar,10);
+let c = includesElement(ar,3);
 console.log(c);
