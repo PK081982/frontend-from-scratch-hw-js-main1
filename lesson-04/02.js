@@ -29,11 +29,12 @@ function findUniqueElements(ar)
         }
             
     }
+    return ar;
 }
 
-findUniqueElements(ar);
+/*let s =findUniqueElements(ar);
 
-/*for(let b=0; b< ar.length; ++b)
+for(let b=0; b< s.length; ++b)
 {
-    console.log(ar[b]);
+    console.log(s[b]);
 }*/
