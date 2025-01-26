@@ -17,16 +17,17 @@ const game = {
   },
   addResource(resource, amount ) 
   {
-    if(resource in game===false)
+    if(game.resources[resource]===undefined)
     {
       console.log("Invalid resource");
     }
     else
     {
       game.resources[resource]+=amount;
+      
     }
   }
 }
 
-game.addResource("gld", 50);
-//console.log(game.resources["gold"]);
+game.addResource("lumer", 50);
+console.log(game.resources["lumber"]);
