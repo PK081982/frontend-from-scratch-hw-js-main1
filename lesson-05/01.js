@@ -29,5 +29,5 @@ const game = {
   }
 }
 
-game.addResource("lumer", 50);
-console.log(game.resources["lumber"]);
+//game.addResource("lumber", 50);
+//console.log(game.resources["lumber"]);
