@@ -12,7 +12,7 @@
 function truncate(str, maxLength) {
   if(str.length>maxLength)
     {
-      return str.substring(0,(maxLength-3)) + '...';
+      return str.substring(0,(maxLength)) + '...';
     }
 
   else 
@@ -21,6 +21,6 @@ function truncate(str, maxLength) {
     }
 }
 
-let str = "rrrrrr";
-let l = 2;
+let str = "Вот, что мне действительно нравится в этом";
+let l = 20;
 console.log(truncate(str, l));
