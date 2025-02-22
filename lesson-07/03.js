@@ -10,8 +10,14 @@
 */
 
 function truncate(str, maxLength) {
-  // your code
+if(str.Length>maxLength)
+{
   return str.substring(0,maxLength) + '...';
+}
+  else 
+  {
+    return str;
+  }
 }
 
 /*let str = "rrrrrrrrrrrrrrrrrrrr";
