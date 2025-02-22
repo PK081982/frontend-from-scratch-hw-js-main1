@@ -10,16 +10,17 @@
 */
 
 function truncate(str, maxLength) {
-if(str.Length>maxLength)
-{
-  return str.substring(0,maxLength) + '...';
-}
+  if(str.length>maxLength)
+    {
+      return str.substring(0,(maxLength-3)) + '...';
+    }
+
   else 
-  {
-    return str;
-  }
+    {
+      return str;
+    }
 }
 
-/*let str = "rrrrrrrrrrrrrrrrrrrr";
-let l = 6;
-console.log(truncate(str, l));*/
+let str = "rrrrrr";
+let l = 2;
+console.log(truncate(str, l));
