@@ -11,4 +11,9 @@
 
 function truncate(str, maxLength) {
   // your code
+  return str.substring(0,maxLength) + '...';
 }
+
+/*let str = "rrrrrrrrrrrrrrrrrrrr";
+let l = 6;
+console.log(truncate(str, l));*/
