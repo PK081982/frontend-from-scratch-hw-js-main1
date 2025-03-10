@@ -35,16 +35,17 @@ const petShop = document.querySelector('.pet-shop')
 const cartList = document.getElementById('cart-list')
 const messageBox = document.getElementById('message-box')
 const clearCartButton = document.getElementById('clear-cart-button')
+let p = document.createElement('p');
+messageBox.append(p);
+let numbersOfClicks=1;
 
 // Рендерим кнопки для питомцев
 for (let i = 0; i < PETS.length; i++) {
   const pet = PETS[i]
-
   const petButtonElement = document.createElement('button')
   petButtonElement.classList.add('pet')
   petButtonElement.id = pet.id
   petButtonElement.textContent = pet.title
-
   petShop.append(petButtonElement)
 }
 
@@ -64,7 +65,25 @@ function updateCartDisplay() {
 
 clearCartButton.addEventListener('click', function () {
   cart.length = 0
-  updateCartDisplay()
+  numbersOfClicks=1;
+  updateCartDisplay();
+  p.innerText ='';
 })
 
-// Твой код:
+petShop.onclick = function(event) { 
+let target = event.target; 
+let id=event.target.id;
+
+  if(numbersOfClicks<=3)
+{
+  cart.push(id);
+}
+  else
+{
+  
+  p.innerText='Вы не можете добавить более 3 питомцев';
+}
+
+numbersOfClicks++;
+updateCartDisplay();
+};
