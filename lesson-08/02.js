@@ -31,10 +31,25 @@ const countdownDisplay = document.getElementById('countdown')
 
 let isTimerStarted = false;
 let timerId;
-let intervalId;
+//let intervalId;
 startButton.addEventListener('click', () => {
-  isTimerStarted = true;  
-  timerId = 3;
+ // isTimerStarted = true; 
+  let counter=3;
+if(isTimerStarted===true){
+   return;
+  }
+  countdownDisplay.innerText = counter;
+  isTimerStarted=true;
+  timerId = setInterval(function(){
+  counter--;
+  countdownDisplay.innerText = counter;
+    if(counter===0){
+        countdownDisplay.innerText ="🚀";
+        clearInterval(timerId);
+        isTimerStarted=false;
+    }
+  },1000)
+  /*timerId = 3;
   intervalId = setInterval(function() {
     switch (timerId) {
       case 3 :
@@ -54,17 +69,18 @@ startButton.addEventListener('click', () => {
         isTimerStarted = false;
         clearInterval(intervalId);
           break;
-    }
+    }*/
 
-    }, 1000)
+})
     
     cancelButton.addEventListener('click', () => {
     if(isTimerStarted===true)
     {
-      clearInterval(intervalId);
+      isTimerStarted=false;
+      clearInterval(timerId);
       countdownDisplay.innerText ="Отменено";
     }
     })
     
-})
+
 
